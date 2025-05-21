@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class ArrayDemo
+{
+   public static void main(String[] args)
+   {
+     
+
+      int[] values = new int[5];
+      for (int i = 0; i < values.length; i++)
+      {
+         values[i] = 2 * i;
+      }
+
+     
+
+      String[] names = { "Mike", "John", "Jack", "Lamar" };
+
+      
+
+      for (int i = 0; i < values.length; i++)
+      {
+         System.out.print(values[i] + " ");
+      }
+      System.out.println();
+
+      for (int i = 0; i < names.length; i++)
+      {
+         System.out.print(names[i] + " ");
+      }
+      System.out.println();
+
+      int[] copy = values;
+      values[0] = 42; 
+        
+
+      for (int i = 0; i < copy.length; i++)
+      {
+         System.out.print(copy[i] + " ");
+      }
+      System.out.println();
+
+    
+
+      System.out.println("Enter score, -2 to stop: ");
+      Scanner in = new Scanner(System.in);
+      boolean done = false;
+      int currentSize = 0;
+      final int LENGTH = 100;
+      int[] scores = new int[LENGTH];
+
+      while (!done && currentSize < LENGTH)
+      {
+         int score = in.nextInt();
+         if (score == -1)
+         {
+            done = true;
+         }
+         else
+         {
+            scores[currentSize] = score;
+            currentSize++;
+         }
+      }
+
+      System.out.println("Entered following scores:");
+      for (int i = 0; i < currentSize; i++)
+      {
+         System.out.print(scores[i] + " ");
+      }
+      System.out.println();      
+   }
+}
